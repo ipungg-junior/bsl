@@ -1,0 +1,10 @@
+# Ignore SQLite database files
+*.sqlite
+*.sqlite3
+*.db
+*.pyc
+apps/__pycache__
+bsl/__pycache__
+apps/migrations
+bsl/migrations
+# bsl/settings.py
