@@ -7,4 +7,4 @@ apps/__pycache__
 bsl/__pycache__
 apps/migrations
 bsl/migrations
-# bsl/settings.py
+bsl/settings.py

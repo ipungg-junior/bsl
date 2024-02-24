@@ -25,12 +25,14 @@ SECRET_KEY = '$y+h5@+fo%e%^+b17dq)sr(0k2523ichxi)5%^f31=gy8vpd6$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['bsl.systema.id', '127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'apps',
+    'merchandise',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,7 +56,7 @@ ROOT_URLCONF = 'bsl.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -99,22 +101,25 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
+TIME_ZONE = 'Asia/Jakarta'
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.0/howto/static-files/
-
+'''
+    Note for production:
+        - change static root path with absolute path on vps/dedicated server
+'''
 STATIC_URL = '/static/'
+#STATIC_ROOT = "/Backup Lenovo/UBAID/sekawansystema/staticfiles/"
+STATIC_ROOT = "/root/sekawansystema/staticfiles"
+#STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# during development add this line
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]

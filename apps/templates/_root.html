@@ -1,0 +1,36 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>SYSTEMA GROUP</title> 
+    <link rel="shortcut icon" href="{% static 'systemaassets/logo.webp' %}" type="image/svg+xml">
+    <!-- CSS files -->
+    <link href="{% static 'systemacss/tabler.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'systemacss/tabler-vendors.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'systemacss/demo.min.css' %}" rel="stylesheet"/>
+    <style>
+      @import url('https://rsms.me/inter/inter.css');
+      :root {
+      	--tblr-font-sans-serif: 'Inter Var', -apple-system, BlinkMacSystemFont, San Francisco, Segoe UI, Roboto, Helvetica Neue, sans-serif;
+      }
+      body {
+      	font-feature-settings: "cv03", "cv04", "cv11";
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Libs JS -->
+    <script src="{% static 'systemajs/demo-theme.min.js' %}"></script>
+    
+    {% block body %}
+    {% endblock body %}
+    
+    <!-- Tabler Core -->
+    <script src="{% static 'systemajs/tabler.min.js' %}"></script>
+    <script src="{% static 'systemajs/demo.min.js' %}"></script>
+    <script src="{% static 'systemajs/nav_x.js' %}"></script>
+  </body>
+</html>
