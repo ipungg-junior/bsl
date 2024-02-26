@@ -1,0 +1,606 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sekawan Systema Group Indonesia" />
+  <meta name="author" content="Sekawan Systema" />
+  <title>Systema - Sekawan Systema Group</title>
+  <!-- <link rel="icon" type="image/x-icon" href="{% static 'systemaassets/logo.webp' %}" /> -->
+  <link rel="shortcut icon" href="{% static 'systemaassets/logo.webp' %}" type="image/svg+xml">
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="{% static 'systemacss/style.css' %}" rel="stylesheet" />
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="" class="logo"><img src="{% static 'systemaassets/logo.webp' %}" width="20px" alt=""></a>
+
+      <nav class="navbar container" data-navbar>
+        <ul class="navbar-list">
+
+          <li>
+            <a href="#service" class="navbar-link" data-nav-link>Services</a>
+          </li>
+
+          <!-- <li>
+            <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+          </li> -->
+
+          <li>
+            <a href="#contact" class="navbar-link" data-nav-link>Contact Us</a>
+          </li>
+
+          <!-- <li style="background-color: rgb(92, 119, 255); padding-left: 8px; padding-right: 8px; border-radius: 6px;">
+            <a target="_blank" href="/" class="navbar-link" style="color: whitesmoke;" data-nav-link>techno-pllaza</a>
+          </li> -->
+
+          <li>
+            <a href="#contact" class="btn btn-primary">Konsultasi Gratis</a>
+          </li>
+
+        </ul>
+      </nav>
+
+      <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
+        <ion-icon name="menu-outline" class="open"></ion-icon>
+        <ion-icon name="close-outline" class="close"></ion-icon>
+      </button>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero" id="home" aria-label="hero">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <p class="hero-subtitle">Sekawan Systema Group</p>
+
+            <h1 class="h1 hero-title">We are available system solution.</h1>
+
+            <p class="hero-text">
+              Penyedia solusi teknologi terkemuka yang menyediakan inovasi canggih untuk memecahkan permasalahan
+              kompleks dan meningkatkan efisiensi bisnis Anda
+            </p>
+
+            <a href="#contact" class="btn btn-primary">Konsultasi Gratis</a>
+
+          </div>
+
+          <figure class="hero-banner">
+            <img src="{% static 'systemaassets/vector-landing.png' %}" width="720" height="673" alt="hero banner"
+              class="w-100">
+          </figure>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #SERVICE
+      -->
+
+      <section class="section service" id="service" aria-label="service">
+        <div class="container">
+
+          <h2 class="h2 section-title">Services We Provided</h2>
+
+          <p class="section-text">
+            Nikmati layanan yang kami sediakan, dapatkan soolusi terbaik untuk perkembangan bisnis Anda
+          </p>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon" style="background-color: #13c4a1">
+                  <ion-icon name="code-working"></ion-icon>
+                </div>
+
+                <h3 class="h3">
+                  <a class="card-title">Software Development</a>
+                </h3>
+
+                <p class="card-text">
+                  Kami menawarkan layanan pengembangan perangkat lunak yang inovatif dan berkualitas tinggi. Dari konsep
+                  hingga peluncuran,
+                  tim ahli pengembang perangkat lunak kami bekerja keras untuk menghadirkan solusi yang sesuai dengan
+                  kebutuhan Anda.
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon" style="background-color: #6610f2">
+                  <ion-icon name="business"></ion-icon>
+                </div>
+
+                <h3 class="h3">
+                  <a class="card-title">Business System Solution</a>
+                </h3>
+
+                <p class="card-text">
+                  Kami memahami bahwa setiap bisnis memiliki tantangan dan peluangnya sendiri.
+                  Melalui solusi bisnis kami, kami berkomitmen untuk membantu Anda mengoptimalkan operasi, meningkatkan
+                  efisiensi,
+                  dan merespons perubahan pasar dengan cepat.
+                </p>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="service-card">
+
+                <div class="card-icon" style="background-color: #ffb700">
+                  <ion-icon name="hardware-chip"></ion-icon>
+                </div>
+
+                <h3 class="h3">
+                  <a class="card-title">IT Architecture</a>
+                </h3>
+
+                <p class="card-text">
+                  Layanan arsitektur IT kami dirancang untuk memberikan fondasi yang kokoh bagi proyek-proyek kebutuhan
+                  Anda.
+                  Dari perencanaan hingga implementasi, kami bekerja sama dengan Anda untuk merancang arsitektur yang
+                  aman, scalable, dan efisien
+                </p>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #PROJECT
+      -->
+
+      <section class="section project" id="project" aria-label="project">
+        <div class="container">
+
+          <h2 class="h2 section-title">Our Recent Projects</h2>
+
+          <p class="section-text">
+            Setiap proyek kami mencerminkan dedikasi kami terhadap kualitas, kreativitas, dan keunggulan teknologi.
+            Temukan kisah-kisah inspiratif di balik setiap proyek kami dan melihat bagaimana kami membantu klien kami
+            mencapai
+            tujuan mereka.
+          </p>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 510; --height: 700;">
+                  <img src="{% static 'systemaassets/preview-landing.webp' %}" width="510" height="700" loading="lazy"
+                    alt="Designing a better cinema experience" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <p class="card-subtitle">zeroERP</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Designing a better system business for great experience</a>
+                  </h3>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 510; --height: 700;">
+                  <img src="{% static 'systemaassets/product-2.png' %}" width="510" height="700" loading="lazy"
+                    alt="Building design process within teams" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <p class="card-subtitle">Food Apps</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Building design process within professional teams</a>
+                  </h3>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="project-card">
+
+                <figure class="card-banner img-holder" style="--width: 510; --height: 700;">
+                  <img src="{% static 'systemaassets/product-3.png' %}" width="510" height="700" loading="lazy"
+                    alt="How intercom brings play into their design process" class="img-cover"
+                    style="object-fit: fill;">
+                </figure>
+
+                <div class="card-content">
+
+                  <p class="card-subtitle">Profile Website</p>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">How intercom brings play into their design process</a>
+                  </h3>
+
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+      <!-- 
+        - #CTA
+      -->
+
+      <section class="section cta" aria-label="cta">
+        <div class="container">
+
+          <p class="cta-subtitle">So What is Next?</p>
+
+          <h2 class="h2 section-title">Siapkah Anda untuk mengembangkan bisnis yang lebih baik?</h2>
+
+          <a href="#" class="btn btn-secondary">Get Started</a>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #BLOG
+      -->
+
+      <!-- <section class="section blog" id="blog" aria-label="blog">
+        <div class="container">
+
+          <h2 class="h2 section-title">Latest Articles Updated Weekly</h2>
+
+          <p class="section-text">
+            Ikuti terus blog kami, banyak konten menarik yang up-to-date.
+          </p>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner img-holder" style="--width: 860; --height: 646;">
+                  <img src="{% static 'systemaassets/blog-1.jpg' %}" width="860" height="646" loading="lazy"
+                    alt="How to Become a Successful Entry Level UX Designer" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <time class="time" datetime="2022-06-16">June 16, 2022</time>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">How to Become a Successful Entry Level UX Designer</a>
+                  </h3>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card grid">
+
+                <figure class="card-banner img-holder" style="--width: 860; --height: 646;">
+                  <img src="{% static 'systemaassets/blog-2.jpg' %}" width="860" height="646" loading="lazy"
+                    alt="2022 Local SEO Success: The Year of Everywhere" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <time class="time" datetime="2022-06-16">June 16, 2022</time>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">2022 Local SEO Success: The Year of Everywhere</a>
+                  </h3>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card grid">
+
+                <figure class="card-banner img-holder" style="--width: 860; --height: 646;">
+                  <img src="{% static 'systemaassets/blog-3.jpg' %}" width="860" height="646" loading="lazy"
+                    alt="The Guide to Running a Client Discovery Process" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <time class="time" datetime="2022-06-16">June 16, 2022</time>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">The Guide to Running a Client Discovery Process</a>
+                  </h3>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card grid">
+
+                <figure class="card-banner img-holder" style="--width: 860; --height: 646;">
+                  <img src="{% static 'systemaassets/blog-4.jpg' %}" width="860" height="646" loading="lazy"
+                    alt="3 Ways to Get Client Approval for Scope Changes" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <time class="time" datetime="2022-06-16">June 16, 2022</time>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">3 Ways to Get Client Approval for Scope Changes</a>
+                  </h3>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card grid">
+
+                <figure class="card-banner img-holder" style="--width: 860; --height: 646;">
+                  <img src="{% static 'systemaassets/blog-5.jpg' %}" width="860" height="646" loading="lazy"
+                    alt="Top 21 Must-Read Blogs For Creative Agencies" class="img-cover">
+                </figure>
+
+                <div class="card-content">
+
+                  <time class="time" datetime="2022-06-16">June 16, 2022</time>
+
+                  <h3 class="h3">
+                    <a href="#" class="card-title">Top 21 Must-Read Blogs For Creative Agencies</a>
+                  </h3>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section> -->
+
+
+
+
+
+      <!-- 
+        - #CONTACT
+      -->
+
+      <section class="section contact" id="contact" aria-label="contact">
+        <div class="container">
+
+          <div class="contact-form">
+            {% csrf_token %}
+            <h2 class="h2 section-title">Let's Contact With Us</h2>
+
+            <p class="section-text">
+              Berikan kami kontak Anda, agar kami menghubungi dan memberikan solusi terbaik untuk menyelesaikan masalah
+              Anda.
+            </p>
+            <div class="input-wrapper">
+              <input type="text" id="name" aria-label="name" placeholder="Nama Anda" required class="input-field">
+              <input type="email" id="email" aria-label="email" placeholder="Alamat Email" required class="input-field">
+            </div>
+
+            <div class="input-wrapper">
+              <input type="text" id="topic" aria-label="subject" placeholder="Topik" class="input-field">
+              <input type="number" id="phone" aria-label="phone" placeholder="No. Whatsapp" class="input-field">
+            </div>
+
+            <textarea id="message" aria-label="message" placeholder="Deskripsikan singkat mengenai kebutuhan Anda."
+              required class="input-field"></textarea>
+
+            <div class="checkbox-wrapper">
+              <input type="checkbox" name="terms" id="terms" required class="checkbox">
+              <label for="terms" class="label">
+                Accept <a href="/tos/" target="_blank" class="label-link">Terms of Services</a>
+              </label>
+            </div>
+
+            <button id="btn-submit" type="submit" class="btn btn-primary text-center">Submit</button>
+          </div>
+
+
+          <ul class="contact-list">
+
+            <li class="contact-item">
+              <div class="contact-card">
+
+                <div class="card-icon">
+                  <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">Mail Here</h3>
+
+                  <a href="mailto:cs@systema.id" class="card-link">cs@systema.id</a>
+
+                </div>
+
+              </div>
+            </li>
+
+
+            <li class="contact-item">
+              <div class="contact-card">
+
+                <div class="card-icon">
+                  <ion-icon name="headset-outline" aria-hidden="true"></ion-icon>
+                </div>
+
+                <div class="card-content">
+
+                  <h3 class="h3 card-title">Call Here</h3>
+
+                  <a class="card-link">+62 8383 7358 230</a>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <p class="copyright">
+        &copy; 2023 All Rights Reserved by <a href="#" class="copyright-link">Sekawan Systema Group</a>
+      </p>
+
+    </div>
+  </footer>
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" aria-label="back to top" data-back-top-btn class="back-top-btn">
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="{% static 'systemajs/script.js' %}" defer></script>
+  <script src="{% static 'systemajs/landing.js' %}" defer></script>
+  <script src="{% static 'systemajs/utils.js' %}"></script>
+
+  <script>
+    // var csrftoken = document.getElementById('name');
+    var inputName = document.getElementById('name');
+    var inputEmail = document.getElementById('email');
+    var inputTopic = document.getElementById('topic');
+    var inputPhone = document.getElementById('phone');
+    var inputMessage = document.getElementById('message');
+    var accToS = document.getElementById('terms');
+    var contactContainer = document.getElementById('contact');
+    var btnSubmit = document.getElementById('btn-submit');
+
+    btnSubmit.addEventListener('click', function () {
+      if(accToS.checked){
+        pushForm();
+      }else{
+        alert('Mohon baca dan centang panduan Terms.');
+      }
+    })
+
+    async function pushForm() {
+      var csrfToken = document.getElementsByName('csrfmiddlewaretoken')[0].value;
+      var postman = new HttpManager(('/'));
+      postman.setHeader('X-CSRFToken', csrfToken);
+      postman.setData('name', inputName.value);
+      postman.setData('email', inputEmail.value);
+      postman.setData('topic', inputTopic.value);
+      postman.setData('phone', inputPhone.value);
+      postman.setData('message', inputMessage.value);
+      postman = await postman.post();
+      if (postman.status == 'success'){
+        alert(postman.message);
+        contactContainer.parentNode.removeChild(contactContainer);
+      }else{
+        alert(postman.message);
+      }
+    }
+
+  </script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,370 @@
+{% load static %}
+
+<!-- Sidebar -->
+<aside class="navbar navbar-vertical navbar-expand-lg py-4" data-bs-theme="dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-menu" aria-controls="sidebar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <h1 class="navbar-brand navbar-brand-autodark">
+        <a>
+          <img src="{% static 'systemaassets/logo.webp' %}" alt="Tabler" class="navbar-brand-image" max-height="10">
+        </a>
+        <h2 class="page-title" style="justify-content: center; font-size: 12px;">
+         SYSTEMA   
+        </h2>
+    </h1>
+
+      <div class="collapse navbar-collapse" id="sidebar-menu"  style="overflow-y: sroll;">
+        <ul class="navbar-nav pt-lg-3">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'dashboard' %}">
+              <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
+              </span>
+              <span class="nav-link-title">
+                Home
+              </span>
+            </a>
+          </li>
+          {% comment %} Merchandise {% endcomment %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="false" >
+              <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/package -->
+                <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <g> <path fill="none" d="M0 0h24v24H0z"/> <path d="M7 8V6a5 5 0 1 1 10 0v2h3a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3zm0 2H5v10h14V10h-2v2h-2v-2H9v2H7v-2zm2-2h6V6a3 3 0 0 0-6 0v2z"/> </g> </svg>
+              </span>
+              <span class="nav-link-title">
+                Merchandise
+              </span>
+            </a>
+            <div class="dropdown-menu">
+              <div class="dropdown-menu-columns">
+                <div class="dropdown-menu-column">
+                  <a class="dropdown-item" href="./alerts.html">
+                    SOC
+                  </a>
+                  <a class="dropdown-item" href="./blank.html">
+                    Bill of Materials
+                  </a>
+                  <a class="dropdown-item" href="./blank.html">
+                    Work Order
+                  </a>
+                  <a class="dropdown-item" href="./blank.html">
+                    Sample
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+          {% comment %} Purchasing {% endcomment %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="false" >
+              <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/package -->
+                <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <g> <path fill="none" d="M0 0h24v24H0z"/> <path d="M4 6.414L.757 3.172l1.415-1.415L5.414 5h15.242a1 1 0 0 1 .958 1.287l-2.4 8a1 1 0 0 1-.958.713H6v2h11v2H5a1 1 0 0 1-1-1V6.414zM6 7v6h11.512l1.8-6H6zm-.5 16a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm12 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/> </g> </svg>
+              </span>
+              <span class="nav-link-title">
+                Purchasing
+              </span>
+            </a>
+            <div class="dropdown-menu">
+              <div class="dropdown-menu-columns">
+                <div class="dropdown-menu-column">
+                  <a class="dropdown-item" href="./blank.html">
+                    PO Checking
+                  </a>
+                  <a class="dropdown-item" href="./alerts.html">
+                    PO Bahan Baku
+                  </a>
+                  <a class="dropdown-item" href="./accordion.html">
+                    PO Bahan Penolong (sewing)
+                  </a>
+                  <a class="dropdown-item" href="./blank.html">
+                    PO Bahan Penolong (cutting)
+                  </a>
+                  <a class="dropdown-item" href="./blank.html">
+                    PO Bahan Penolong (cutting)
+                  </a>
+                  <a class="dropdown-item" href="./blank.html">
+                    PO Bahan Penolong (cutting)
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+          {% comment %} Warehouse {% endcomment %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="false" >
+              <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/package -->
+                <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <g> <path fill="none" d="M0 0h24v24H0z"/> <path d="M10 10.111V1l11 6v14H3V7l7 3.111zm2-5.742v8.82l-7-3.111V19h14V8.187L12 4.37z"/> </g> </svg>
+              </span>
+              <span class="nav-link-title">
+                Warehouse
+              </span>
+            </a>
+            <div class="dropdown-menu">
+              <div class="dropdown-menu-columns">
+                <div class="dropdown-menu-column">
+                  <a class="dropdown-item" href="./accordion.html">
+                    Penerimaan Barang (CEISA)
+                  </a>
+                  <a class="dropdown-item" href="./blank.html">
+                    Penerimaan Barang
+                  </a>
+                  <a class="dropdown-item" href="./blank.html">
+                    Retur Produksi
+                  </a>
+                  <div class="dropend">
+                    <a class="dropdown-item dropdown-toggle" href="#sidebar-authentication" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="false" >
+                      Transfer Barang/Material
+                    </a>
+                    <div class="dropdown-menu">
+                  <a class="dropdown-item" href="./blank.html">
+                    Transfer Material
+                  </a>
+                  <a class="dropdown-item" href="./blank.html">
+                    Transfer Bahan Penolong
+                  </a>
+                  <a class="dropdown-item" href="./blank.html">
+                    Transfer Material Subkon
+                  </a>
+                  <a class="dropdown-item" href="./blank.html">
+                    Transfer Material Sample
+                  </a>
+                  <a class="dropdown-item" href="./blank.html">
+                    Transfer Material antar Style
+                  </a>
+                  <a class="dropdown-item" href="./blank.html">
+                    Retur Barang Supplier
+                  </a>
+                  <a class="dropdown-item" href="./blank.html">
+                    Surat Jalan Pengeluaran Material
+                  </a>
+                </div>
+              </div>
+                  <div class="dropend">
+                    <a class="dropdown-item dropdown-toggle" href="#sidebar-authentication" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="false" >
+                      Stock
+                    </a>
+                    <div class="dropdown-menu">
+                      <a href="./sign-in.html" class="dropdown-item">
+                        Opname Bahan Baku dan Penolong
+                      </a>
+                      <a href="./sign-in.html" class="dropdown-item">
+                        Kartu stok bahan baku dan penolong
+                      </a>
+                    </div>
+                  </div>
+                  <a class="dropdown-item" href="./alerts.html">
+                    Check PO
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+          {% comment %} Produksi {% endcomment %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="false" >
+              <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/package -->
+                <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <g> <path fill="none" d="M0 0H24V24H0z"/> <path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 2c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zm3.833 3.337c.237-.166.559-.138.763.067.204.204.23.526.063.76-2.18 3.046-3.38 4.678-3.598 4.897-.586.585-1.536.585-2.122 0-.585-.586-.585-1.536 0-2.122.374-.373 2.005-1.574 4.894-3.602zM17.5 11c.552 0 1 .448 1 1s-.448 1-1 1-1-.448-1-1 .448-1 1-1zm-11 0c.552 0 1 .448 1 1s-.448 1-1 1-1-.448-1-1 .448-1 1-1zm2.318-3.596c.39.39.39 1.023 0 1.414-.39.39-1.024.39-1.414 0-.39-.39-.39-1.024 0-1.414.39-.39 1.023-.39 1.414 0zM12 5.5c.552 0 1 .448 1 1s-.448 1-1 1-1-.448-1-1 .448-1 1-1z"/> </g> </svg>
+              </span>
+              <span class="nav-link-title">
+                Produksi
+              </span>
+            </a>
+            <div class="dropdown-menu">
+              <div class="dropdown-menu-columns">
+                <div class="dropdown-menu-column">
+                  <a class="dropdown-item" href="./alerts.html">
+                    Cutting
+                  </a>
+                  <a class="dropdown-item" href="./accordion.html">
+                    Sewing
+                  </a>
+                  <a class="dropdown-item" href="./alerts.html">
+                    Loading Barang Jadi Produksi
+                  </a>
+                  <a class="dropdown-item" href="./accordion.html">
+                    Packing Produksi
+                  </a>
+                  <a class="dropdown-item" href="./blank.html">
+                    Packing dari subkon
+                  </a>
+                  <a class="dropdown-item" href="./alerts.html">
+                    Request Material Warehouse
+                  </a>
+                  <a class="dropdown-item" href="./accordion.html">
+                    Closing Permintaan Material
+                  </a>
+                  <a class="dropdown-item" href="./alerts.html">
+                    Pengeluaran Barang (Data TPB)
+                  </a>
+                  <a class="dropdown-item" href="./accordion.html">
+                    Surat Jalan Pengeluaran Barang Jadi
+                  </a>
+                  <a class="dropdown-item" href="./alerts.html">
+                    Stok Opname Barang Jadi
+                  </a>
+                  <a class="dropdown-item" href="./accordion.html">
+                    Stok Opname Barang dalam Proses (WIP)
+                  </a>
+                  <a class="dropdown-item" href="./alerts.html">
+                    Kartu Stok Barang Jadi
+                  </a>
+                  <a class="dropdown-item" href="./accordion.html">
+                    Kartu Stok WIP
+                  </a>
+                  <a class="dropdown-item" href="./alerts.html">
+                    Hitung Ulang WIP
+                  </a>
+                  <a class="dropdown-item" href="./accordion.html">
+                    Penelusuran Barang Jadi
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+          {% comment %} Subkon {% endcomment %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="false" >
+              <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/package -->
+                <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M7.994 153.5c1.326 0 2.687 .3508 3.975 1.119L208 271.5v223.8c0 9.741-7.656 16.71-16.01 16.71c-2.688 0-5.449-.7212-8.05-2.303l-152.2-92.47C12.13 405.3 0 383.3 0 359.5v-197.7C0 156.1 3.817 153.5 7.994 153.5zM426.2 117.2c0 2.825-1.352 5.647-4.051 7.248L224 242.6L25.88 124.4C23.19 122.8 21.85 119.1 21.85 117.2c0-2.8 1.32-5.603 3.965-7.221l165.1-100.9C201.7 3.023 212.9 0 224 0s22.27 3.023 32.22 9.07l165.1 100.9C424.8 111.6 426.2 114.4 426.2 117.2zM440 153.5C444.2 153.5 448 156.1 448 161.8v197.7c0 23.75-12.12 45.75-31.78 57.69l-152.2 92.5C261.5 511.3 258.7 512 256 512C247.7 512 240 505 240 495.3V271.5l196-116.9C437.3 153.8 438.7 153.5 440 153.5z"/></svg>
+              </span>
+              <span class="nav-link-title">
+                Subkon
+              </span>
+            </a>
+            <div class="dropdown-menu">
+              <div class="dropdown-menu-columns">
+                <div class="dropdown-menu-column">
+                  <a class="dropdown-item" href="./alerts.html">
+                    Registrasi Kontrak Subkontraktor
+                  </a>
+                  <div class="dropend">
+                    <a class="dropdown-item dropdown-toggle" href="#sidebar-authentication" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="false" >
+                      Permintaan
+                    </a>
+                    <div class="dropdown-menu">
+                      <a href="./sign-in.html" class="dropdown-item">
+                        Permintaan Material Warehouse
+                      </a>
+                      <a href="./sign-in.html" class="dropdown-item">
+                        Closing Permintaan Material
+                      </a>
+                    </div>
+                  </div>
+                  <div class="dropend">
+                    <a class="dropdown-item dropdown-toggle" href="#sidebar-authentication" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="false" >
+                      Monitoring
+                    </a>
+                    <div class="dropdown-menu">
+                      <a href="./sign-in.html" class="dropdown-item">
+                        Monitoring Barang pada Subkon
+                      </a>
+                      <a href="./sign-in.html" class="dropdown-item">
+                        Monitoring Kontrak Subkon
+                      </a>
+                    </div>
+                  </div>
+                  <div class="dropend">
+                    <a class="dropdown-item dropdown-toggle" href="#sidebar-authentication" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="false" >
+                      Barang
+                    </a>
+                    <div class="dropdown-menu">
+                      <a href="./sign-in.html" class="dropdown-item">
+                        Penerimaan dari Subkon
+                      </a>
+                      <a href="./sign-in.html" class="dropdown-item">
+                        Pengeluaran ke Subkon
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          {% comment %} Ekspor Impor {% endcomment %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="false" >
+              <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/package -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3l8 4.5l0 9l-8 4.5l-8 -4.5l0 -9l8 -4.5" /><path d="M12 12l8 -4.5" /><path d="M12 12l0 9" /><path d="M12 12l-8 -4.5" /><path d="M16 5.25l-8 4.5" /></svg>
+              </span>
+              <span class="nav-link-title">
+                EXIM
+              </span>
+            </a>
+            <div class="dropdown-menu">
+              <div class="dropdown-menu-columns">
+                <div class="dropdown-menu-column">
+                  <a class="dropdown-item" href="./alerts.html">
+                    BC Pemasukan
+                  </a>
+                  <a class="dropdown-item" href="./accordion.html">
+                    BC 2.5
+                  </a>
+                  <a class="dropdown-item" href="./blank.html">
+                    BC 2.6.1
+                  </a>
+                  <a class="dropdown-item" href="./blank.html">
+                    BC 2.7
+                  </a>
+                  <a class="dropdown-item" href="./blank.html">
+                    BC 3.0
+                  </a>
+                  <a class="dropdown-item" href="./blank.html">
+                    BC 4.1
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+          {% comment %} Laporan {% endcomment %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#navbar-base" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="false" >
+              <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/package -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3l8 4.5l0 9l-8 4.5l-8 -4.5l0 -9l8 -4.5" /><path d="M12 12l8 -4.5" /><path d="M12 12l0 9" /><path d="M12 12l-8 -4.5" /><path d="M16 5.25l-8 4.5" /></svg>
+              </span>
+              <span class="nav-link-title">
+                Laporan
+              </span>
+            </a>
+            <div class="dropdown-menu">
+              <div class="dropdown-menu-columns">
+                <div class="dropdown-menu-column">
+                  <a class="dropdown-item" href="./alerts.html">
+                    Alerts
+                  </a>
+                  <a class="dropdown-item" href="./accordion.html">
+                    Accordion
+                  </a>
+                  <div class="dropend">
+                    <a class="dropdown-item dropdown-toggle" href="#sidebar-authentication" data-bs-toggle="dropdown" data-bs-auto-close="false" role="button" aria-expanded="false" >
+                      Authentication
+                    </a>
+                    <div class="dropdown-menu">
+                      <a href="./sign-in.html" class="dropdown-item">
+                        Sign in
+                      </a>
+                    </div>
+                  </div>
+                  <a class="dropdown-item" href="./blank.html">
+                    Blank page
+                  </a>
+                </div>
+              </div>
+            </div>
+          </li>
+          
+          <li class="nav-item mt-4">
+            <a class="nav-link" href="{% url 'logout' %}" >
+              <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/mail-opened -->
+                <svg style="color: red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 256C288 273.7 273.7 288 256 288C238.3 288 224 273.7 224 256V32C224 14.33 238.3 0 256 0C273.7 0 288 14.33 288 32V256zM80 256C80 353.2 158.8 432 256 432C353.2 432 432 353.2 432 256C432 201.6 407.3 152.9 368.5 120.6C354.9 109.3 353 89.13 364.3 75.54C375.6 61.95 395.8 60.1 409.4 71.4C462.2 115.4 496 181.8 496 255.1C496 388.5 388.5 496 256 496C123.5 496 16 388.5 16 255.1C16 181.8 49.75 115.4 102.6 71.4C116.2 60.1 136.4 61.95 147.7 75.54C158.1 89.13 157.1 109.3 143.5 120.6C104.7 152.9 80 201.6 80 256z" fill="red"></path></svg>
+              </span>
+              <span class="nav-link-title">
+                LOGOUT
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </aside>

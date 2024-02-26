@@ -1,0 +1,212 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sekawan Systema Group Indonesia" />
+    <meta name="author" content="Sekawan Systema" />
+    <title>Systema - Sekawan Systema Group</title>
+    <!-- <link rel="icon" type="image/x-icon" href="{% static 'systemaassets/logo.webp' %}" /> -->
+    <link rel="shortcut icon" href="{% static 'systemaassets/logo.webp' %}" type="image/svg+xml">
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static 'systemacss/style.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <!-- 
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body id="top">
+
+    <!-- 
+    - #HEADER
+  -->
+
+    <header class="header" data-header>
+        <div class="container">
+
+            <a href="" class="logo"><img src="{% static 'systemaassets/logo.webp' %}" width="20px" alt=""></a>
+
+            <nav class="navbar container" data-navbar>
+                <ul class="navbar-list">
+
+                    <li>
+                        <a href="#home" class="navbar-link" data-nav-link>Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#service" class="navbar-link" data-nav-link>Services</a>
+                    </li>
+
+                    <li>
+                        <a href="#project" class="navbar-link" data-nav-link>Project</a>
+                    </li>
+
+                    <!-- <li>
+            <a href="#about" class="navbar-link" data-nav-link>About Us</a>
+          </li> -->
+
+                    <li>
+                        <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact" class="navbar-link" data-nav-link>Contact Us</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact" class="btn btn-primary">Konsultasi Gratis</a>
+                    </li>
+
+                </ul>
+            </nav>
+
+            <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
+                <ion-icon name="menu-outline" class="open"></ion-icon>
+                <ion-icon name="close-outline" class="close"></ion-icon>
+            </button>
+
+        </div>
+    </header>
+
+
+
+
+
+    <main>
+        <article>
+
+            <!-- 
+        - #HERO
+      -->
+
+            <section class="section hero" id="home" aria-label="hero">
+                <div style="display: flex;width: 98vw; justify-content: center;">
+                    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+                    <div id="map" style="width: 80%; height: 70vh; z-index: 1;">
+                        <h1>halow</h1>
+                    </div>
+                    <script>
+
+                        var isMarked = true;
+                        var popup = L.popup();
+                        var map = L.map('map').setView([-6.872745, 109.139557], 14);
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            maxZoom: 19,
+                        }).addTo(map);
+                        var marker = L.marker([-6.872745, 109.139557]).addTo(map);
+                        var circle = L.circle([-6.872745, 109.139557], {
+                            color: 'red',
+                            stroke: false,
+                            fill: true,
+                            fillColor: '#f03',
+                            fillOpacity: 0.2,
+                            radius: 1000 // Radius dalam meter (misalnya 5 km)
+                        }).addTo(map);
+                        var elements = document.getElementsByClassName("leaflet-bottom leaflet-right");
+
+                        // Lakukan loop melalui elemen yang ditemukan dan hapus masing-masing elemen
+                        for (var i = 0; i < elements.length; i++) {
+                            var element = elements[i];
+                            element.parentNode.removeChild(element);
+                        }
+                        function onMapClick(e) {
+                            marker.remove();
+                            var loc = e.latlng.toString();
+                            loc = loc.replace(/\(|\)/g, '');
+                            var val = loc.split(', ');
+                            var foundG = false;
+                            var result = '';
+                            for (var i = 0; i < val[0].length; i++) {
+                                var currentChar = val[0][i];
+
+                                if (foundG) {
+                                    // Jika karakter 'g' sudah ditemukan, tambahkan karakter ke hasil
+                                    result += currentChar;
+                                } else if (currentChar === 'g') {
+                                    // Jika karakter 'g' ditemukan, tandai bahwa 'g' telah ditemukan
+                                    foundG = true;
+                                }
+                            }
+
+                            var lat = parseFloat(result);
+                            var lon = parseFloat(val[1]);
+                            marker.setLatLng([lat, lon]);
+                            marker.addTo(map);
+                            
+                            // Cek lokasi titik dalam radius
+                            var location = map.distance([-6.872745, 109.139557], [lat, lon]);
+                            if (location > 1000) {
+                                alert('Titik berada di luar zona!');
+                            } else {
+                                alert('Titik berada di dalam zona.');
+                            }
+
+                            // set new radius
+                            // circle.setLatLng([lat, lon]);
+                        }
+                        map.on('click', onMapClick);
+                    </script>
+                </div>
+            </section>
+
+
+
+        </article>
+    </main>
+
+
+
+
+
+    <!-- 
+    - #FOOTER
+  -->
+
+    <footer class="footer">
+        <div class="container">
+
+            <p class="copyright">
+                &copy; 2023 All Rights Reserved by <a href="#" class="copyright-link">Sekawan Systema Group</a>
+            </p>
+
+        </div>
+    </footer>
+
+
+
+
+
+    <!-- 
+    - #BACK TO TOP
+  -->
+
+    <a href="#top" aria-label="back to top" data-back-top-btn class="back-top-btn">
+        <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+    </a>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- 
+    - ionicon link
+  -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+</body>
+
+</html>
