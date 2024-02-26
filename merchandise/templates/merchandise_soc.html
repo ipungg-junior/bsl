@@ -30,8 +30,64 @@
                 <div class="col-lg-12">
                     <div class="row row-cards">
                       <div class="col-12">
-                        <div class="card">
-                        </div>
+                        {% if system_info %}
+                          <div class="alert alert-primary alert-dismissible" role="alert" id="alert">
+                            
+                            <span class="status status-blue">
+                              <h3 class="mb-1">
+                              <span class="status-dot status-dot-animated">
+                              </span>
+                                  
+                              Pemberitahuan</h3></span>
+                            <p>{{ system_info_content }}</p>
+                            {% comment %} <a class="btn-close" data-bs-dismiss="alert" aria-label="close"></a> {% endcomment %}
+                          </div>
+                        {% endif %}
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">Nama</th>
+                              <th scope="col">Topic</th>
+                              <th scope="col">Email</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                              {% for ticket in list_ticket %}
+                            <tr>
+                              <th scope="row">{{ ticket.name }}</th>
+                              <td>{{ ticket.topic }}</td>
+                              <td>{{ ticket.email }}</td>
+                            </tr>
+                             {% endfor %}
+                            <tr class="table-primary">
+                              <th scope="row">Primary</th>
+                              <td>Cell</td>
+                              <td>Cell</td>
+                            </tr>
+                            <tr class="table-dark">
+                              <th scope="row">Dark</th>
+                              <td>Cell</td>
+                              <td>Cell</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <div class="pagination">
+                          <span class="step-links">
+                              {% if list_ticket.has_previous %}
+                                  <a href="?page=1">&laquo; first</a>
+                                  <a href="?page={{ list_ticket.previous_page_number }}">previous</a>
+                              {% endif %}
+                      
+                              <span class="current">
+                                  Page {{ list_ticket.number }} of {{ list_ticket.paginator.num_pages }}.
+                              </span>
+                      
+                              {% if page_obj.has_next %}
+                                  <a href="?page={{ list_ticket.next_page_number }}">next</a>
+                                  <a href="?page={{ list_ticket.paginator.num_pages }}">last &raquo;</a>
+                              {% endif %}
+                          </span>
+                      </div>
                       </div>
                     </div>
                 </div>
@@ -68,5 +124,31 @@
         </footer>
       </div>
     </div>
+
+    <script>
+      // Fungsi untuk memulai animasi fade out dan hapus elemen
+    function fadeOutAndRemove(elementId) {
+      var element = document.getElementById(elementId);
+
+      if (element) {
+          var opacity = 1;
+          var interval = setInterval(function () {
+              opacity -= 0.025; // Ubah sesuai kecepatan yang diinginkan
+              element.style.opacity = opacity;
+
+              // Setelah elemen benar-benar memudar, hapus dari DOM
+              if (opacity <= 0) {
+                  clearInterval(interval);
+                  element.parentNode.removeChild(element);
+              }
+          }, 80); // Interval waktu, ubah sesuai kecepatan yang diinginkan
+      }
+  }
+
+  // Panggil fungsi setelah 5 detik
+  setTimeout(function () {
+      fadeOutAndRemove('alert');
+  }, 5000);
+    </script>
 
 {% endblock body %}
