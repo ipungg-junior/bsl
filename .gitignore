@@ -8,3 +8,7 @@ bsl/__pycache__
 apps/migrations
 bsl/migrations
 bsl/settings.py
+merchandise/migrations
+merchandise/__pycache__
+warehouse/migrations
+warehouse/__pycache__

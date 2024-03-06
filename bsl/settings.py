@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['bsl.systema.id', '127.0.0.1']
 INSTALLED_APPS = [
     'apps',
     'merchandise',
+    'warehouse',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

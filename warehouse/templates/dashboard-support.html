@@ -1,0 +1,110 @@
+{% extends "_root.html" %}
+{% load static %}
+
+
+{% block body %}
+
+    <div class="page ">
+      {% include '_nav.html' %}
+      <div class="page-wrapper">
+        <!-- Page header -->
+        <div class="page-header d-print-none">
+          <div class="container-xl">
+            <div class="row g-2 align-items-center">
+              <div class="col">
+                <!-- Page pre-title -->
+                <div class="page-pretitle">
+                    SEKAWAN SYSTEMA GROUP
+                </div>
+                <h2 class="page-title">
+                  Support Customer Management
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Page body -->
+        <div class="page-body">
+          <div class="container-xl">
+            <div class="row row-deck row-cards">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nama</th>
+                        <th scope="col">Topic</th>
+                        <th scope="col">Email</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for ticket in list_ticket %}
+                      <tr>
+                        <th scope="row">{{ ticket.name }}</th>
+                        <td>{{ ticket.topic }}</td>
+                        <td>{{ ticket.email }}</td>
+                      </tr>
+                       {% endfor %}
+                      <tr class="table-primary">
+                        <th scope="row">Primary</th>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                      </tr>
+                      <tr class="table-dark">
+                        <th scope="row">Dark</th>
+                        <td>Cell</td>
+                        <td>Cell</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="pagination">
+                    <span class="step-links">
+                        {% if list_ticket.has_previous %}
+                            <a href="?page=1">&laquo; first</a>
+                            <a href="?page={{ list_ticket.previous_page_number }}">previous</a>
+                        {% endif %}
+                
+                        <span class="current">
+                            Page {{ list_ticket.number }} of {{ list_ticket.paginator.num_pages }}.
+                        </span>
+                
+                        {% if page_obj.has_next %}
+                            <a href="?page={{ list_ticket.next_page_number }}">next</a>
+                            <a href="?page={{ list_ticket.paginator.num_pages }}">last &raquo;</a>
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+          </div>
+        </div>
+        
+        <footer class="footer footer-transparent d-print-none">
+          <div class="container-xl">
+            <div class="row text-center align-items-center flex-row-reverse">
+              <div class="col-lg-auto ms-lg-auto">
+                <ul class="list-inline list-inline-dots mb-0">
+                  <li class="list-inline-item"><a href="https://tabler.io/docs" target="_blank" class="link-secondary" rel="noopener">Laporkan</a></li>
+                  <li class="list-inline-item"><a href="https://github.com/tabler/tabler" target="_blank" class="link-secondary" rel="noopener">Kontak Developer</a></li>
+                  <li class="list-inline-item"><a href="./license.html" class="link-secondary">Terms & service</a></li>
+                </ul>
+              </div>
+              <div class="col-12 col-lg-auto mt-3 mt-lg-0">
+                <ul class="list-inline list-inline-dots mb-0">
+                  <li class="list-inline-item">
+                    Copyright &copy; 2023
+                    <a href="." class="link-secondary">Tabler</a>.
+                    All rights reserved.
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="./changelog.html" class="link-secondary" rel="noopener">
+                      v1.0.0
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+{% endblock body %}
