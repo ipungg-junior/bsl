@@ -7,4 +7,5 @@ app_name = 'warehouse'
 
 urlpatterns = [
     path('inbound/', Inbound.as_view(context=''), name='warehouse-inbound'),
+    path('inbound/edit/<str:product_code>/', Inbound.as_view(context='inventory-edit'), name='inventory-edit'),
 ] 

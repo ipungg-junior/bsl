@@ -1,0 +1,95 @@
+{% load static %}
+
+<!-- Sidebar -->
+<aside class="navbar navbar-vertical navbar-expand-lg py-4" data-bs-theme="dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-menu" aria-controls="sidebar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <h1 class="navbar-brand navbar-brand-autodark">
+        <a>
+          <img src="{% static 'systemaassets/logo.webp' %}" alt="Tabler" class="navbar-brand-image" max-height="10">
+        </a>
+        <h2 class="page-title" style="justify-content: center; font-size: 12px;">
+         SYSTEMA   
+        </h2>
+    </h1>
+
+      <div class="collapse navbar-collapse" id="sidebar-menu"  style="overflow-y: sroll;">
+        <ul class="navbar-nav pt-lg-3">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'lobby' %}">
+              <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
+              </span>
+              <span class="nav-link-title">
+                Home
+              </span>
+            </a>
+          </li>
+          {% comment %} Warehouse {% endcomment %}
+          <li class="nav-item"> 
+            <a class="nav-link" href="">
+              <span class="nav-link-icon d-md-none d-lg-inline-block">
+                <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="-70 0 612 512"><g><path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/><g></svg>
+              </span>
+              <span class="nav-link-title">
+                Penerimaan Barang (CEISA)
+              </span>
+            </a>
+            <a class="nav-link" href="">
+              <span class="nav-link-icon d-md-none d-lg-inline-block">
+                <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="-70 0 384 512"><g><path d="M350 334.5c3.8 8.8 2 19-4.6 26l-136 144c-4.5 4.8-10.8 7.5-17.4 7.5s-12.9-2.7-17.4-7.5l-136-144c-6.6-7-8.4-17.2-4.6-26s12.5-14.5 22-14.5h88l0-192c0-17.7-14.3-32-32-32H32C14.3 96 0 81.7 0 64V32C0 14.3 14.3 0 32 0l80 0c70.7 0 128 57.3 128 128l0 192h88c9.6 0 18.2 5.7 22 14.5z"/></g></svg>
+              </span>
+              <span class="nav-link-title">
+                Penerimaan Barang
+              </span>
+            </a>
+            <a class="nav-link" href="">
+              <span class="nav-link-icon d-md-none d-lg-inline-block">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="-60 0 512 512"><g><path d="M48.5 224H40c-13.3 0-24-10.7-24-24V72c0-9.7 5.8-18.5 14.8-22.2s19.3-1.7 26.2 5.2L98.6 96.6c87.6-86.5 228.7-86.2 315.8 1c87.5 87.5 87.5 229.3 0 316.8s-229.3 87.5-316.8 0c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0c62.5 62.5 163.8 62.5 226.3 0s62.5-163.8 0-226.3c-62.2-62.2-162.7-62.5-225.3-1L185 183c6.9 6.9 8.9 17.2 5.2 26.2s-12.5 14.8-22.2 14.8H48.5z"/></g></svg>
+              </span>
+              <span class="nav-link-title">
+                Retur Produksi
+              </span>
+            </a>
+            <a class="nav-link" href="">
+              <span class="nav-link-icon d-md-none d-lg-inline-block">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="-30 0 512 512"><g><path d="M307 34.8c-11.5 5.1-19 16.6-19 29.2v64H176C78.8 128 0 206.8 0 304C0 417.3 81.5 467.9 100.2 478.1c2.5 1.4 5.3 1.9 8.1 1.9c10.9 0 19.7-8.9 19.7-19.7c0-7.5-4.3-14.4-9.8-19.5C108.8 431.9 96 414.4 96 384c0-53 43-96 96-96h96v64c0 12.6 7.4 24.1 19 29.2s25 3 34.4-5.4l160-144c6.7-6.1 10.6-14.7 10.6-23.8s-3.8-17.7-10.6-23.8l-160-144c-9.4-8.5-22.9-10.6-34.4-5.4z"/></g></svg>
+              </span>
+              <span class="nav-link-title">
+                Transfer Barang/Material
+              </span>
+            </a>
+            <a class="nav-link" href="">
+              <span class="nav-link-icon d-md-none d-lg-inline-block">
+                <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <g> <path fill="none" d="M0 0h24v24H0z"/> <path d="M10 10.111V1l11 6v14H3V7l7 3.111zm2-5.742v8.82l-7-3.111V19h14V8.187L12 4.37z"/> </g> </svg>
+              </span>
+              <span class="nav-link-title">
+                Retur ke Supplier
+              </span>
+            </a>
+            <a class="nav-link" href="">
+              <span class="nav-link-icon d-md-none d-lg-inline-block">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="30 0 640 512"><g><path d="M444.2 0C397.2 49.6 384 126.5 384 192c0 158.8-27.3 247-42.7 283.9c-10 24-33.2 36.1-55.4 36.1H48c-11.5 0-22.2-6.2-27.8-16.2s-5.6-22.3 .4-32.2c9.8-17.7 15.4-38.2 20.5-57.7C52.3 362.8 64 293.5 64 192C64 86 107 0 160 0H444.2zM512 384c-53 0-96-86-96-192S459 0 512 0s96 86 96 192s-43 192-96 192zm0-128c17.7 0 32-28.7 32-64s-14.3-64-32-64s-32 28.7-32 64s14.3 64 32 64zM144 208a16 16 0 1 0 -32 0 16 16 0 1 0 32 0zm64 0a16 16 0 1 0 -32 0 16 16 0 1 0 32 0zm48 16a16 16 0 1 0 0-32 16 16 0 1 0 0 32zm80-16a16 16 0 1 0 -32 0 16 16 0 1 0 32 0z"/></g> </svg>
+              </span>
+              <span class="nav-link-title">
+                Surat Jalan Material
+              </span>
+            </a>
+          </li>
+          
+          <li class="nav-item mt-4">
+            <a class="nav-link" href="{% url 'logout' %}" >
+              <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/mail-opened -->
+                <svg style="color: red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 256C288 273.7 273.7 288 256 288C238.3 288 224 273.7 224 256V32C224 14.33 238.3 0 256 0C273.7 0 288 14.33 288 32V256zM80 256C80 353.2 158.8 432 256 432C353.2 432 432 353.2 432 256C432 201.6 407.3 152.9 368.5 120.6C354.9 109.3 353 89.13 364.3 75.54C375.6 61.95 395.8 60.1 409.4 71.4C462.2 115.4 496 181.8 496 255.1C496 388.5 388.5 496 256 496C123.5 496 16 388.5 16 255.1C16 181.8 49.75 115.4 102.6 71.4C116.2 60.1 136.4 61.95 147.7 75.54C158.1 89.13 157.1 109.3 143.5 120.6C104.7 152.9 80 201.6 80 256z" fill="red"></path></svg>
+              </span>
+              <span class="nav-link-title">
+                LOGOUT
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </aside>

@@ -1,0 +1,75 @@
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+        <form actions='' method="POST">
+        {% csrf_token %}
+        <div class="card-body" style="display: none;">
+          <h3 class="card-title mt-4">Informasi Detail</h3>
+          <div class="row g-3">
+            <div class="col-md">
+              <div class="form-label">Subjek</div>
+              <input type="text" class="form-control" value="">
+            </div>
+            <div class="col-md">
+              <div class="form-label">Nomor Telepon</div>
+              <input type="number" class="form-control" value="">
+            </div>
+            <div class="col-md">
+              <div class="form-label">Email</div>
+              <input type="text" class="form-control" value="">
+            </div>
+          </div>
+          <div>
+            <div class="row g-2 mt-2">
+              <div class="col-auto">
+                <div class="form-label">Hubungan</div>
+                <select class="form-select" placeholder="" id="select-type" name="type" autocomplete="off">
+                  <option value="">-- Pilihan Kategori --</option>
+                  {% for value, key in contact_type %}
+                  <option value="{{value}}">{{key}}</option>                  
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="col-md">
+                <div class="form-label">Perusahaan</div>
+                <select class="form-select" placeholder="" id="select-company" name="company" autocomplete="off">
+                  <option value="">-- Pilihan Perusahaan --</option>
+                  {% for company in company_list %}
+                  <option value="{{company.idCompany}}">{{company.name}} &nbsp; ({{company.legal}})</option>                  
+                  {% endfor %}
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer bg-transparent mt-auto">
+          <div class="btn-list justify-content-end">
+            <a href="#" class="btn btn-primary">
+              Save
+            </a>
+          </div>
+        </div>
+      </form>
+    
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
+  <script>
+
+  new TomSelect("#select-company",{
+    create: false,
+    sortField: {
+      field: "text",
+      direction: "asc"
+    },
+  });
+  
+    new TomSelect("#select-type",{
+      create: false,
+      sortField: {
+        field: "text",
+        direction: "asc"
+      }
+    });
+    
+    </script>

@@ -14,7 +14,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+AUTH_USER_MODEL = 'apps.UserBsl'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -25,13 +25,14 @@ SECRET_KEY = '$y+h5@+fo%e%^+b17dq)sr(0k2523ichxi)5%^f31=gy8vpd6$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['bsl.systema.id', '127.0.0.1']
+ALLOWED_HOSTS = ['bsl.systema.id', '127.0.0.1', '103.161.185.213']
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'apps',
+    'crm',
     'merchandise',
     'warehouse',
     'django.contrib.admin',

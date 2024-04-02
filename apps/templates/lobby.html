@@ -1,0 +1,149 @@
+{% extends '_root.html' %}
+{% load static %}
+{% block body %}
+    <header class="navbar navbar-expand-md d-print-none">
+  <div class="container-xl">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu" aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
+      <div class="d-flex" style="flex-direction: column;">
+        <a style="font-size: 20px">
+          {% comment %} <img src="./static/logo.svg" width="110" height="32" alt="Tabler" class="navbar-brand-image"> {% endcomment %}
+          myERP (DEMO)
+        </a>
+        <a style="font-size: 12px; color: #141414; font-weight: 300;" class="mt-2">
+          {% comment %} <img src="./static/logo.svg" width="110" height="32" alt="Tabler" class="navbar-brand-image"> {% endcomment %}
+          by systema.id
+        </a>
+      </div>
+    </h1>
+    <div class="navbar-nav flex-row order-md-last">
+      <div class="nav-item d-none d-md-flex me-3">
+        <div class="btn-list">
+          {% if user.is_superuser == True %}
+          <a href="" class="btn btn-outline-secondary">
+            <span class="nav-link-icon d-md-none d-lg-inline-block">
+              <svg fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g><path d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"/></g></svg>
+            </span>
+            Pengaturan
+          </a>
+          {% endif %}
+          <a href="{% url 'logout' %}" class="btn btn-outline-danger">
+            <span class="nav-link-icon d-md-none d-lg-inline-block">
+              <svg style="color: red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M288 256C288 273.7 273.7 288 256 288C238.3 288 224 273.7 224 256V32C224 14.33 238.3 0 256 0C273.7 0 288 14.33 288 32V256zM80 256C80 353.2 158.8 432 256 432C353.2 432 432 353.2 432 256C432 201.6 407.3 152.9 368.5 120.6C354.9 109.3 353 89.13 364.3 75.54C375.6 61.95 395.8 60.1 409.4 71.4C462.2 115.4 496 181.8 496 255.1C496 388.5 388.5 496 256 496C123.5 496 16 388.5 16 255.1C16 181.8 49.75 115.4 102.6 71.4C116.2 60.1 136.4 61.95 147.7 75.54C158.1 89.13 157.1 109.3 143.5 120.6C104.7 152.9 80 201.6 80 256z" fill="red"></path></svg>
+            </span>
+            LOGOUT
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+    </header>
+    </div>
+    <div class="page page-center page-body">
+      <div class="container-xl">
+        <div class="row row-deck row-cards">
+        <div class="col-lg-12">
+          <div class="row row-cards justify-content-center">
+            <a class="col-sm-6 col-lg-3 btn btn-lg" style="margin-right: 1em;" href="{% url 'merchandise:merchandise-soc' %}">
+              <div class="card" style="border-color: #ffff;">
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col-auto">
+                      <span class="bg-teal text-white avatar">
+                        <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <g> <path fill="none" d="M0 0h24v24H0z"/> <path d="M7 8V6a5 5 0 1 1 10 0v2h3a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3zm0 2H5v10h14V10h-2v2h-2v-2H9v2H7v-2zm2-2h6V6a3 3 0 0 0-6 0v2z"/> </g> </svg>
+                      </span>
+                    </div>
+                    
+                    <div class="col-md-3">
+                      <div class="font-weight-medium">
+                        Merchandise
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a class="col-sm-6 col-lg-3 btn btn-lg" style="margin-right: 1em;" href="{% url 'warehouse:warehouse-inbound' %}">
+              <div class="card" style="border-color: #ffff;">
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col-auto">
+                      <span class="bg-orange text-white avatar">
+                        <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <g> <path fill="none" d="M0 0h24v24H0z"/> <path d="M10 10.111V1l11 6v14H3V7l7 3.111zm2-5.742v8.82l-7-3.111V19h14V8.187L12 4.37z"/> </g> </svg>
+                      </span>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="font-weight-medium">
+                        Warehouse
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a class="col-sm-6 col-lg-3 btn btn-lg" style="margin-right: 1em;">
+              <div class="card" style="border-color: #ffff;">
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col-auto">
+                      <span class="bg-primary text-white avatar">
+                        <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <g> <path fill="none" d="M0 0h24v24H0z"/> <path d="M4 6.414L.757 3.172l1.415-1.415L5.414 5h15.242a1 1 0 0 1 .958 1.287l-2.4 8a1 1 0 0 1-.958.713H6v2h11v2H5a1 1 0 0 1-1-1V6.414zM6 7v6h11.512l1.8-6H6zm-.5 16a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm12 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/> </g> </svg>
+                      </span>
+                    </div>
+                    <div class="col-lg-6 ">
+                      <div class="font-weight-medium">
+                        Purchasing
+                      </div>
+                      <p style="font-size: 12px;color: red; text-align: left; padding-left:7px;">offline</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a class="col-sm-6 col-lg-3 btn btn-lg" style="margin-right: 1em;">
+              <div class="card" style="border-color: #ffff;">
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col-auto">
+                      <span class="bg-yellow text-white avatar">
+                        <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <g> <path fill="none" d="M0 0H24V24H0z"/> <path d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm0 2c-4.418 0-8 3.582-8 8s3.582 8 8 8 8-3.582 8-8-3.582-8-8-8zm3.833 3.337c.237-.166.559-.138.763.067.204.204.23.526.063.76-2.18 3.046-3.38 4.678-3.598 4.897-.586.585-1.536.585-2.122 0-.585-.586-.585-1.536 0-2.122.374-.373 2.005-1.574 4.894-3.602zM17.5 11c.552 0 1 .448 1 1s-.448 1-1 1-1-.448-1-1 .448-1 1-1zm-11 0c.552 0 1 .448 1 1s-.448 1-1 1-1-.448-1-1 .448-1 1-1zm2.318-3.596c.39.39.39 1.023 0 1.414-.39.39-1.024.39-1.414 0-.39-.39-.39-1.024 0-1.414.39-.39 1.023-.39 1.414 0zM12 5.5c.552 0 1 .448 1 1s-.448 1-1 1-1-.448-1-1 .448-1 1-1z"/> </g> </svg>
+                      </span>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="font-weight-medium">
+                        Production
+                      </div>
+                      <p style="font-size: 12px;color: red; text-align: left; padding-left:7px;">offline</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a class="col-sm-6 col-lg-3 btn btn-lg" style="margin-right: 1em;" href="{% url 'crm:relations' %}">
+              <div class="card" style="border-color: #ffff;">
+                <div class="card-body">
+                  <div class="row align-items-center">
+                    <div class="col-auto">
+                      <span class="bg-teal text-white avatar">
+                        <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <g> <path fill="none" d="M0 0h24v24H0z"/> <path d="M7 8V6a5 5 0 1 1 10 0v2h3a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1h3zm0 2H5v10h14V10h-2v2h-2v-2H9v2H7v-2zm2-2h6V6a3 3 0 0 0-6 0v2z"/> </g> </svg>
+                      </span>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="font-weight-medium">
+                        CRM
+                      </div>
+                      {% comment %} <p style="font-size: 12px;color: red; text-align: left; padding-left:7px;">offline</p> {% endcomment %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+{% endblock body %}

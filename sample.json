@@ -1,0 +1,66 @@
+{
+    "results": [
+      {
+        "gender": "male",
+        "name": {
+          "title": "Mr",
+          "first": "Robert",
+          "last": "Martinez"
+        },
+        "location": {
+          "street": {
+            "number": 3473,
+            "name": "Walnut Hill Ln"
+          },
+          "city": "Seymour",
+          "state": "Ohio",
+          "country": "United States",
+          "postcode": 24331,
+          "coordinates": {
+            "latitude": "84.6833",
+            "longitude": "-166.0743"
+          },
+          "timezone": {
+            "offset": "+5:30",
+            "description": "Bombay, Calcutta, Madras, New Delhi"
+          }
+        },
+        "email": "robert.martinez@example.com",
+        "login": {
+          "uuid": "d8b5fdb2-4aeb-42ff-a0f4-538885543cc9",
+          "username": "whiteelephant436",
+          "password": "1980",
+          "salt": "tO6Tj79O",
+          "md5": "3b9d5b0831ac4e80f2c0518955ecd796",
+          "sha1": "886ee50c4c9d8bf6d2d58cdfdc886e4aa0a4c4f5",
+          "sha256": "e58e2a30e380b0880e282122e19b78c2835e2cee3cd1c9f8efc2069b0bdf6342"
+        },
+        "dob": {
+          "date": "1957-04-13T12:52:49.687Z",
+          "age": 66
+        },
+        "registered": {
+          "date": "2013-05-10T20:24:34.073Z",
+          "age": 10
+        },
+        "phone": "(633) 427-8697",
+        "cell": "(915) 371-7309",
+        "id": {
+          "name": "SSN",
+          "value": "352-21-7654"
+        },
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/men/53.jpg",
+          "medium": "https://randomuser.me/api/portraits/med/men/53.jpg",
+          "thumbnail": "https://randomuser.me/api/portraits/thumb/men/53.jpg"
+        },
+        "nat": "US"
+      }
+    ],
+    "info": {
+      "seed": "d13c975d410f196b",
+      "results": 1,
+      "page": 1,
+      "version": "1.4"
+    }
+  }

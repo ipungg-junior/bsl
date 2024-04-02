@@ -4,8 +4,7 @@
 {% block body %}
 
 <div class="page ">
-  {% include '_nav_warehouse.html' %}
-  
+  {% include '_nav.html' %}
   <div class="page-wrapper">
         <!-- Page header -->
         <div class="page-header d-print-none">
@@ -17,15 +16,15 @@
                     SEKAWAN SYSTEMA GROUP
                 </div>
                 <h2 class="page-title">
-                  {{namespace_app}} - Inbound
+                  Merchandise - SoC
                 </h2>
               </div>
               <!-- Page title actions -->
               <div class="col-auto ms-auto d-print-none">
                 <div class="btn-list">
-                  <a href="#" class="btn btn-azure-lt d-none d-sm-inline-block" type="button" data-bs-toggle="modal" data-bs-target="#inbound-modal">
+                  <a href="#" class="btn btn-azure-lt d-none d-sm-inline-block" type="button" data-bs-toggle="modal" data-bs-target="#soc-modal">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 5l0 14"></path><path d="M5 12l14 0"></path></svg>
-                    Buat Inbound Barang
+                    Buat SOC
                   </a>
                 </div>
               </div>
@@ -54,40 +53,51 @@
                           </div>
                         {% endif %}
                         
-                        
-                        <table class="table display" id="inbound-table">
+                        <table class="table">
                           <thead>
                             <tr>
-                              <th scope="col">Kode Barang</th>
-                              <th scope="col">Nama Barang</th>
-                              <th scope="col">Pengirim</th>
-                              <th scope="col">Tanggal Masuk</th>
-                              <th scope="col"></th>
+                              <th scope="col">SOC ID</th>
+                              <th scope="col">PO Number</th>
+                              <th scope="col">Customer</th>
                             </tr>
                           </thead>
                           <tbody>
-                              {% for data in data_warehouse %}
+                              {% for doc in soc_document %}
                             <tr>
-                              <th scope="row">{{ data.product_code }}</th>
-                              <td>{{ data.product_name }}</td>
-                              <td>{{ data.sender }}</td>
-                              <td>{{ data.date_in }}</td>
-                              <td>
-                                <a class="btn" href="{% url 'warehouse:warehouse-inbound' %}edit/{{ data.product_code }}/">
-                                  Edit
-                                </a>
-                                <a class="btn" id="delete-inventory-{{data.id}}">
-                                <span class="nav-link-icon d-md-none d-lg-inline-block">
-                                  <svg style="color: rgb(236, 24, 24);" xmlns="http://www.w3.org/2000/svg"viewBox="0 0 512 512"><g><path d="M112,112l20,320c.95,18.49,14.4,32,32,32H348c17.67,0,30.87-13.51,32-32l20-320" style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" fill="#ec1818"></path><line x1="80" y1="112" x2="432" y2="112" style="stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></line><path d="M192,112V72h0a23.93,23.93,0,0,1,24-24h80a23.93,23.93,0,0,1,24,24h0v40" style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" fill="#ec1818"></path><line x1="256" y1="176" x2="256" y2="400" style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></line><line x1="184" y1="176" x2="192" y2="400" style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></line><line x1="328" y1="176" x2="320" y2="400" style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></line></g></svg>
-                                </span>
-                              </a>
-                              </td>
-                              
+                              <th scope="row">{{ doc.soc_number }}</th>
+                              <td>{{ doc.po_number }}</td>
+                              <td>{{ doc.po_number }}</td>
                             </tr>
                              {% endfor %}
+                            <tr class="table-primary">
+                              <th scope="row">Primary</th>
+                              <td>Cell</td>
+                              <td>Cell</td>
+                            </tr>
+                            <tr class="table-dark">
+                              <th scope="row">Dark</th>
+                              <td>Cell</td>
+                              <td>Cell</td>
+                            </tr>
                           </tbody>
                         </table>
-                        
+                        <div class="pagination">
+                          <span class="step-links">
+                              {% if list_ticket.has_previous %}
+                                  <a href="?page=1">&laquo; first</a>
+                                  <a href="?page={{ list_ticket.previous_page_number }}">previous</a>
+                              {% endif %}
+                      
+                              <span class="current">
+                                  Page {{ list_ticket.number }} of {{ list_ticket.paginator.num_pages }}.
+                              </span>
+                      
+                              {% if page_obj.has_next %}
+                                  <a href="?page={{ list_ticket.next_page_number }}">next</a>
+                                  <a href="?page={{ list_ticket.paginator.num_pages }}">last &raquo;</a>
+                              {% endif %}
+                          </span>
+                      </div>
                       </div>
                     </div>
                 </div>
@@ -125,30 +135,12 @@
       </div>
     </div>
 
+
     {% comment %} FORM MODAL MERCHANDISE {% endcomment %}
-    {% include './form/add_inbound.html' %}
-    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-    <script src="https://cdn.datatables.net/2.0.1/js/dataTables.js"></script>
+    {% include './form/add_soc.html' %}
+
+
     <script>
-
-      document.addEventListener('click', function(event) {
-        if (event.target && event.target.id.startsWith('delete-inventory-')) {
-            var uniqueId = event.target.id.split('delete-inventory-')[1];
-            console.log("Id unik belakangnya:", uniqueId);
-        }
-    });
-
-    // Menambahkan event listener ke elemen dokumen
-    document.addEventListener('click', function(event) {
-      // Memeriksa apakah elemen yang diklik memiliki kelas 'like-button'
-      if (event.target && event.target.classList.contains('delete-button')) {
-          // Mengambil data unik dari atribut 'data-unique-id'
-          var uniqueId = event.target.getAttribute('data-unique-id');
-          console.log("Id unik belakangnya:", uniqueId);
-      }
-  });
-
-
       // Fungsi untuk memulai animasi fade out dan hapus elemen
     function fadeOutAndRemove(elementId) {
       var element = document.getElementById(elementId);
@@ -171,18 +163,7 @@
   // Panggil fungsi setelah 5 detik
   setTimeout(function () {
       fadeOutAndRemove('alert');
-      console.log('again')
   }, 5000);
-
-
-    let table = new DataTable('#inbound-table', {
-      // options
-    });
-
-
-   
-
-
     </script>
 
 {% endblock body %}

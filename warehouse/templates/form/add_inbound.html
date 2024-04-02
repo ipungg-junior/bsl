@@ -1,0 +1,155 @@
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <div class="modal" id="inbound-modal" tabindex="-1">
+    <div class="modal-dialog modal-full-width modal-dialog-centered" role="document"  style="margin-right: 8em; margin-left: 8em;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Buat Penerimaan Barang (NON CEISA)</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form actions='' method="POST">
+        {% csrf_token %}
+        <div class="modal-body">
+          <div class="row">
+          <div class="col-lg-3">
+          <div class="mb-3">
+            <label class="form-label">Kode Barang</label>
+            <input type="text" class="form-control" name="product-code" placeholder="XXX-123" />
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="mb-3">
+            <label class="form-label">Nama Barang</label>
+            <input type="text" class="form-control" name="product-name" placeholder="" />
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="mb-3">
+            <label class="form-label">Pengirim</label>
+            <select class="form-select" placeholder="" id="select-sender" name="sender" autocomplete="off">
+              <option value="">-- Pilihan Pengirim --</option>
+              <option value="1">Maju Jaya Sejahtera (PT)</option>
+              <option value="2">Citra Harmoni Sukses (CV)</option>
+              <option value="3">Gemilang Makmur Abadi (PT)</option>
+              <option value="4">Mitra Sentosa Bersama (CV)</option>
+              <option value="5">Harapan Baru Sukses (PT)</option>
+              <option value="6">Cemerlang Sejahtera (CV)</option>
+              <option value="7">Maju Bersama Mandiri (PT)</option>
+              <option value="8">Prima Harmoni Cipta (CV)</option>
+              <option value="9">Sukses Gemilang Sejahtera (PT)</option>
+              <option value="10">Sentosa Jaya Makmur (CV)</option>
+              <option value="11">Berkah Sejahtera Abadi (PT)</option>
+              <option value="12">Mitra Sukses Bersama (CV)</option>
+              <option value="13">Gemilang Cipta Harmoni (PT)</option>
+              <option value="14">Citra Mandiri Sejahtera (CV)</option>
+              <option value="15">Harapan Baru Maju (PT)</option>
+              <option value="16">Cemerlang Sentosa (CV)</option>
+              <option value="17">Maju Sejahtera Cipta (PT)</option>
+              <option value="18">Prima Harmoni Sukses (CV)</option>
+              <option value="19">Sukses Jaya Bersama (PT)</option>
+              <option value="20">Sentosa Makmur Cipta (CV)</option>
+              <option value="21">Berkah Harmoni Abadi (PT)</option>
+              <option value="22">Mitra Sentosa Sejahtera (CV)</option>
+              <option value="23">Gemilang Maju Cipta (PT)</option>
+              <option value="24">Citra Sukses Harmoni (CV)</option>
+              <option value="25">Harapan Baru Sejahtera (PT)</option>
+              <option value="26">Cemerlang Bersama Makmur (CV)</option>
+              <option value="27">Maju Jaya Cipta (PT)</option>
+              <option value="28">Prima Harmoni Sentosa (CV)</option>
+              <option value="29">Sukses Makmur Sejahtera (PT)</option>
+              <option value="30">Sentosa Cipta Bersama (CV)</option>
+              <option value="31">Berkah Maju Abadi (PT)</option>
+              <option value="32">Mitra Sukses Harmoni (CV)</option>
+              <option value="33">Gemilang Bersama Cipta (PT)</option>
+              <option value="34">Citra Jaya Sejahtera (CV)</option>
+              <option value="35">Harapan Baru Cipta (PT)</option>
+              <option value="36">Cemerlang Makmur Harmoni (CV)</option>
+              <option value="37">Maju Harmoni Sejahtera (PT)</option>
+              <option value="38">Prima Sentosa Cipta (CV)</option>
+              <option value="39">Sukses Jaya Sejahtera (PT)</option>
+              <option value="40">Sentosa Bersama Makmur (CV)</option>
+            </select>
+          </div>
+        </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="mb-3">
+              <label class="form-label">Kategori Barang</label>
+              <select class="form-select" placeholder="" id="select-category" name="category" autocomplete="off">
+                <option value="">-- Pilihan Kategori --</option>
+                <option value="1">Bahan Mentah</option>
+                <option value="2">Bahan Setengah Jadi</option>
+                <option value="3">Bahan Jadi</option>
+                <option value="4">Barang Aset</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="mb-3">
+              <label class="form-label">Tanggal Masuk Barang</label>
+              <input class="form-control mb-2" placeholder="Select a date" id="datepicker" value="2020-06-20" name="date-in"/> 
+            </div>
+          </div>
+        </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="mb-3">
+                <label class="form-label">Satuan</label>
+                <select class="form-select" placeholder="" id="select-unit" tabindex="-1" name="unit">
+                  <option value="0">Yard</option>
+                  <option value="1">Meter</option>
+                  <option value="2">Gram</option>
+                  <option value="3">pcs</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="mb-3">
+                <label class="form-label">Lokasi Disimpan</label>
+                <select class="form-select" placeholder="" id="select-location"  name="location">
+                  {% for location_key, location_value in location_choice %}
+                    <option value="{{location_key}}">{{location_value}}</option>
+                  {% endfor %}
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-secondary">Submit</button>
+        </div>
+      </form>
+      </div>
+    </div>
+    
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
+  <script>
+    flatpickr("#datepicker", {
+      dateFormat: "Y-m-d",
+      defaultDate: "today",
+      onChange: function(selectedDates, dateStr, instance) {
+          readJson(dateStr);
+      }
+  });
+
+  new TomSelect("#select-sender",{
+    create: false,
+    sortField: {
+      field: "text",
+      direction: "asc"
+    },
+  });
+  
+    new TomSelect("#select-category",{
+      create: false,
+      sortField: {
+        field: "text",
+        direction: "asc"
+      }
+    });
+    
+    </script>

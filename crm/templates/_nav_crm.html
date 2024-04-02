@@ -1,0 +1,63 @@
+{% load static %}
+
+<!-- Sidebar -->
+<aside class="navbar navbar-vertical navbar-expand-lg py-4" data-bs-theme="dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-menu" aria-controls="sidebar-menu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <h1 class="navbar-brand navbar-brand-autodark">
+        <a>
+          <img src="{% static 'systemaassets/logo.webp' %}" alt="Tabler" class="navbar-brand-image" max-height="10">
+        </a>
+        <h2 class="page-title" style="justify-content: center; font-size: 12px;">
+         SYSTEMA   
+        </h2>
+    </h1>
+
+      <div class="collapse navbar-collapse" id="sidebar-menu"  style="overflow-y: sroll;">
+        <ul class="navbar-nav pt-lg-3">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'lobby' %}">
+              <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l-2 0l9 -9l9 9l-2 0" /><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /><path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg>
+              </span>
+              <span class="nav-link-title">
+                Home
+              </span>
+            </a>
+          </li>
+          {% comment %} Warehouse {% endcomment %}
+          <li class="nav-item"> 
+            <a class="nav-link" href="{% url 'crm:relations' %}">
+              <span class="nav-link-icon d-md-none d-lg-inline-block">
+                <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="-70 0 612 512"><g><path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/><g></svg>
+              </span>
+              <span class="nav-link-title">
+                Hubungan Relasi
+              </span>
+            </a>
+            <a class="nav-link" href="">
+              <span class="nav-link-icon d-md-none d-lg-inline-block">
+                <svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="-70 0 384 512"><g><path d="M350 334.5c3.8 8.8 2 19-4.6 26l-136 144c-4.5 4.8-10.8 7.5-17.4 7.5s-12.9-2.7-17.4-7.5l-136-144c-6.6-7-8.4-17.2-4.6-26s12.5-14.5 22-14.5h88l0-192c0-17.7-14.3-32-32-32H32C14.3 96 0 81.7 0 64V32C0 14.3 14.3 0 32 0l80 0c70.7 0 128 57.3 128 128l0 192h88c9.6 0 18.2 5.7 22 14.5z"/></g></svg>
+              </span>
+              <span class="nav-link-title">
+                Komplain
+              </span>
+            </a>
+          </li>
+          
+          <li class="nav-item mt-4">
+            <a class="nav-link" href="{% url 'logout' %}" >
+              <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/mail-opened -->
+                <svg style="color: red" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 256C288 273.7 273.7 288 256 288C238.3 288 224 273.7 224 256V32C224 14.33 238.3 0 256 0C273.7 0 288 14.33 288 32V256zM80 256C80 353.2 158.8 432 256 432C353.2 432 432 353.2 432 256C432 201.6 407.3 152.9 368.5 120.6C354.9 109.3 353 89.13 364.3 75.54C375.6 61.95 395.8 60.1 409.4 71.4C462.2 115.4 496 181.8 496 255.1C496 388.5 388.5 496 256 496C123.5 496 16 388.5 16 255.1C16 181.8 49.75 115.4 102.6 71.4C116.2 60.1 136.4 61.95 147.7 75.54C158.1 89.13 157.1 109.3 143.5 120.6C104.7 152.9 80 201.6 80 256z" fill="red"></path></svg>
+              </span>
+              <span class="nav-link-title">
+                LOGOUT
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
