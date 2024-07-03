@@ -1,6 +1,5 @@
 from crm.models import Company
 
-
 class CompanyService:
     
     def update_or_create(self, data):
@@ -32,6 +31,26 @@ class CompanyService:
     def update(self):
         pass
 
+
+    def setup_company_dictionary(self, selected_id):
+        selected_id = str(selected_id)
+        list_company = []
+        ls = Company.objects.all()
+        _tmp = {'selected': '', 'company_list':''}
+
+        for i in ls:
+            item = {'id': i.idCompany, 'name': i.name, 'legal': i.legal}
+            list_company.append(item)
+            if (selected_id == str(i.idCompany)):
+                x = {'id': i.idCompany, 'name': i.name}
+                _tmp['selected'] = x
+
+        _tmp['company_list'] = list_company
+        return _tmp
+
+    def set_legal(self, company_id, set_id):
+        com = Company.objects.get(company_id)
+        com.set_legal(set_id)
 
 
 def get_legal_type():

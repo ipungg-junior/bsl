@@ -7,6 +7,8 @@ application = get_wsgi_application()
 from merchandise import models as mdModel
 from warehouse import models as warehouseModel
 from crm import models as crmModel
+from warehouse.service import _inventory
+from crm.service import company
 
 class UnitTest:
 
@@ -14,9 +16,12 @@ class UnitTest:
         self.test_function()
 
     def test_function(self):
-        data = warehouseModel.Inventory.objects.get(product_code='TPB01')
-        list_company = crmModel.Company.objects.all()
-        list_company[0].set_legal(1)
-        data.sender = f'{list_company[0].name} ({list_company[0].legal})'
-        data.save()
-        print(data.sender)
+        comp = crmModel.Company.objects.get(idCompany='1322024')
+        inv_service = _inventory.InventoryService()
+        item = warehouseModel.Inventory.objects.get(product_code='KTN002')
+        item.sender = comp.name + ' ' + comp.legal
+        item.save()
+        item = inv_service.get_item('KTN002')
+        com = company.CompanyService()
+        ar = com.setup_company_dictionary(40)
+        print(ar)

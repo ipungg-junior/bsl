@@ -38,7 +38,7 @@ class InventoryService(models.Inventory):
             'sender': item[0].sender,
             'storage_location': item[0].storage_location
         }
-        regex_item['storage_location'] = item[0].list_location_option(regex_item['storage_location'])
+        regex_item['storage_location'] = item[0].get_location(regex_item['storage_location'])
         return regex_item
 
     def get_all(self):
@@ -51,3 +51,6 @@ class InventoryService(models.Inventory):
     
     def get_category_type(Self):
         return models.Inventory().CATEGORY_CHOICES
+    
+    def location_options(Self):
+        return models.Inventory().LOCATION_CHOICES

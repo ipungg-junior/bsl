@@ -30,7 +30,7 @@ class Inbound(View):
                           'system_info': system_info, 
                           'system_info_content': system_info_content, 
                           'namespace_app': namespace_app, 
-                          'location_choice': inv_service.get_location(),
+                          'location_choice': inv_service.location_options(),
                           'data_warehouse': inv_service.get_all()
                           })
     
